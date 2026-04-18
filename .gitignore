@@ -1,0 +1,4 @@
+# exclure nos documents de notre dépôt git.
+documents/*
+# garder documents/.gitkeep dans notre dépôt git.
+!documents/.gitkeep
