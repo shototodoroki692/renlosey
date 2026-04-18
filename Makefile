@@ -10,7 +10,14 @@ confirm:
 install/%:
 	venv/bin/pip install $*
 
-## run: exécute notre script python pour l'indexation des nos documents.
+## run/indexing: exécute notre script python pour l'indexation des nos documents.
 .PHONY: run/indexing
-run/indexing: confirm
+run/indexing: confirm # run/db
 	venv/bin/python3 indexing.py
+
+## run/db: exécute notre fichier compose.yaml pour instancier un container
+## docker à partir de notre image postgres. Notre base de données PostgreSQL est
+## donc disponible via Docker.
+.PHONY: run/db
+run/db:
+	docker compose up --build -d

@@ -2,3 +2,6 @@
 documents/*
 # garder documents/.gitkeep dans notre dépôt git.
 !documents/.gitkeep
+
+# exclure les fichiers d'environnement.
+.env*
